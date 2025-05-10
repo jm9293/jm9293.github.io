@@ -1,800 +1,800 @@
 <!DOCTYPE html>
 <html lang="ko" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>개발자 이정민입니다</title>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-  />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'selector',
-    };
-  </script>
-  <style>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>개발자 이정민입니다</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "selector",
+      };
+    </script>
+    <style>
       [id] {
-          scroll-margin-top: 64px; /* 원하는 여백 값으로 설정 */
+        scroll-margin-top: 64px; /* 원하는 여백 값으로 설정 */
       }
-  </style>
-</head>
-<body
-  class="dark:bg-gray-900 dark:text-white bg-white text-black min-h-screen transition-colors duration-300"
->
-<header class="sticky top-0 bg-opacity-90 backdrop-blur-lg z-50">
-  <nav
-    class="container max-w-5xl mx-auto px-6 py-3 flex justify-between items-center"
+    </style>
+  </head>
+  <body
+    class="dark:bg-gray-900 dark:text-white bg-white text-black min-h-screen transition-colors duration-300"
   >
-    <div class="flex items-center space-x-4">
-      <h1 class="text-2xl font-bold">이정민</h1>
-      <p class="text-sm text-blue-600 dark:text-gray-300">풀스택 개발자</p>
-    </div>
+    <header class="sticky top-0 bg-opacity-90 backdrop-blur-lg z-50">
+      <nav
+        class="container max-w-5xl mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-4">
+          <h1 class="text-2xl font-bold">이정민</h1>
+          <p class="text-sm text-blue-600 dark:text-gray-300">풀스택 개발자</p>
+        </div>
 
-    <div class="hidden md:flex items-center gap-x-6">
-      <a href="#home" class="hover:text-blue-500 transition-colors">홈</a>
-      <a href="#career" class="hover:text-blue-500 transition-colors"
-      >경력</a
-      >
-      <a href="#skills" class="hover:text-blue-500 transition-colors"
-      >기술</a
-      >
-      <a href="#projects" class="hover:text-blue-500 transition-colors"
-      >프로젝트</a
-      >
-      <a href="#links" class="hover:text-blue-500 transition-colors"
-      >링크</a
-      >
-      <button
-        id="darkModeToggle"
-        class="p-2 w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-500"
-      >
-        <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+        <div class="hidden md:flex items-center gap-x-6">
+          <a href="#home" class="hover:text-blue-500 transition-colors">홈</a>
+          <a href="#career" class="hover:text-blue-500 transition-colors"
+            >경력</a
+          >
+          <a href="#skills" class="hover:text-blue-500 transition-colors"
+            >기술</a
+          >
+          <a href="#projects" class="hover:text-blue-500 transition-colors"
+            >프로젝트</a
+          >
+          <a href="#links" class="hover:text-blue-500 transition-colors"
+            >링크</a
+          >
+          <button
+            id="darkModeToggle"
+            class="p-2 w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-500"
+          >
+            <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+          </button>
+        </div>
+        <button
+          id="menuToggle"
+          class="md:hidden p-2 text-gray-700 dark:text-white"
+        >
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </nav>
+    </header>
+
+    <aside
+      id="mobileMenu"
+      class="block md:hidden fixed right-0 inset-y-0 w-64 bg-white dark:bg-gray-800 shadow-lg translate-x-full transition-transform duration-300 z-50"
+    >
+      <button id="closeMenu" class="p-2 m-4 text-gray-700 dark:text-white">
+        <i class="fas fa-times text-2xl"></i>
       </button>
-    </div>
-    <button
-      id="menuToggle"
-      class="md:hidden p-2 text-gray-700 dark:text-white"
-    >
-      <i class="fas fa-bars text-2xl"></i>
-    </button>
-  </nav>
-</header>
+      <nav class="flex flex-col space-y-4 mt-10 px-6">
+        <a href="#home" class="hover:text-blue-500 transition-colors">홈</a>
+        <a href="#career" class="hover:text-blue-500 transition-colors">경력</a>
+        <a href="#skills" class="hover:text-blue-500 transition-colors">기술</a>
+        <a href="#projects" class="hover:text-blue-500 transition-colors"
+          >프로젝트</a
+        >
+        <a href="#links" class="hover:text-blue-500 transition-colors">링크</a>
+        <button
+          id="darkModeToggleMobile"
+          class="p-2 w-full rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-500"
+        >
+          <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
+        </button>
+      </nav>
+    </aside>
 
-<aside
-  id="mobileMenu"
-  class="block md:hidden fixed right-0 inset-y-0 w-64 bg-white dark:bg-gray-800 shadow-lg translate-x-full transition-transform duration-300 z-20"
->
-  <button id="closeMenu" class="p-2 m-4 text-gray-700 dark:text-white">
-    <i class="fas fa-times text-2xl"></i>
-  </button>
-  <nav class="flex flex-col space-y-4 mt-10 px-6">
-    <a href="#home" class="hover:text-blue-500 transition-colors">홈</a>
-    <a href="#career" class="hover:text-blue-500 transition-colors">경력</a>
-    <a href="#skills" class="hover:text-blue-500 transition-colors">기술</a>
-    <a href="#projects" class="hover:text-blue-500 transition-colors"
-    >프로젝트</a
-    >
-    <a href="#links" class="hover:text-blue-500 transition-colors">링크</a>
-    <button
-      id="darkModeToggleMobile"
-      class="p-2 w-full rounded-full bg-gray-200 dark:bg-gray-700 focus:outline-none focus:ring focus:ring-blue-500"
-    >
-      <i class="fas fa-moon text-gray-700 dark:text-yellow-400"></i>
-    </button>
-  </nav>
-</aside>
-
-<main class="container max-w-5xl mx-auto px-6 py-12">
-  <!-- Home Section -->
-  <section
-    id="home"
-    class="flex flex-col md:flex-row justify-between items-center mb-12"
-  >
-    <div class="shrink-0 mb-6 md:mb-0 md:mr-10">
-      <img
-        class="w-56 h-56 rounded-full border-2 object-cover"
-        src="img/profile_toon.png"
-        alt="avatar"
-      />
-    </div>
-    <div class="text-center md:text-right">
-      <h1 class="text-4xl font-bold mb-2">이정민</h1>
-      <p class="text-xl mb-4">Jay Jungmin Lee</p>
-      <p class="text-gray-600 dark:text-gray-400 max-w-">
-        성장을 통해 즐거움을 추구하는 5년차 개발자입니다.<br />
-        서비스 개발에서 비즈니스 관점을 고려하여 방향성을 제시하고 반영하는
-        것을 중요하게 생각합니다.<br />
-        기술을 통해 문제를 해결하고 팀과 함께 성장하는 것이 개발자로서의
-        가장 큰 동기입니다.
-      </p>
-    </div>
-  </section>
-  <!-- About Section -->
-  <section id="career" class="mb-16">
-    <h2 class="text-3xl font-bold mb-6">경력</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <article
-        class="bg-white dark:bg-gray-800 rounded-lg p-6 hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100 dark:border-gray-700"
+    <main class="container max-w-5xl mx-auto px-6 py-12">
+      <!-- Home Section -->
+      <section
+        id="home"
+        class="flex flex-col md:flex-row justify-between items-center mb-12"
       >
-        <h3 class="text-xl font-semibold mb-1">
-          (주)콘버스 / 이커머스 솔루션 리더
-        </h3>
-        <h5
-          class="text-base text-gray-600 dark:text-gray-400 font-semibold mb-3"
-        >
-          2021.03 ~ 2025.03 (4년)
-        </h5>
-        <ul class="text-gray-800 dark:text-gray-300 leading-relaxed">
-          <li>구매대행 솔루션 '투플렉스'의 다양한 기능을 개발 및 운영</li>
-          <li>오픈마켓 솔루션 '원플렉스' 의 기획 및 구현 , 배포 및 운영</li>
-          <li>전반적인 서비스 기능 개선 및 리팩토링 작업 다수 수행</li>
-        </ul>
-      </article>
-      <article
-        class="bg-white dark:bg-gray-800 rounded-lg p-6 hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100 dark:border-gray-700"
-      >
-        <h3 class="text-xl font-semibold mb-4">교육 및 활동</h3>
-        <ul class="text-gray-800 dark:text-gray-300 leading-relaxed">
-          <li>2023 경희사이버대학교 컴퓨터정보통신공학 졸업 (학사)</li>
-          <li>2022 학생 창업 유망팀 300 산학협력 EXPO 인기상 수상</li>
-          <li>2022 대학생 창업팀 '더 세이프 컴퍼니' CTO 활동</li>
-          <li>2020 코리아 IT아카데미 자바 풀스택 과정 수료</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-  <section id="skills" class="mb-16">
-    <h2 class="text-3xl font-bold mb-6">기술</h2>
-
-    <div class="mb-8">
-      <h3 class="text-2xl font-semibold mb-4">Front-End</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
+        <div class="shrink-0 mb-6 md:mb-0 md:mr-10">
           <img
-            src="img/skill/TypeScript.svg"
-            alt="Vue.js"
-            class="w-10 h-10 mb-1"
+            class="w-56 h-56 rounded-full border-2 object-cover"
+            src="img/profile_toon.png"
+            alt="avatar"
           />
-          <h3 class="md:text-lg text-sm font-semibold">TypeScript</h3>
         </div>
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/React.svg"
-            alt="React"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">React</h3>
+        <div class="text-center md:text-right">
+          <h1 class="text-4xl font-bold mb-2">이정민</h1>
+          <p class="text-xl mb-4">Jay Jungmin Lee</p>
+          <p class="text-gray-600 dark:text-gray-400 max-w-">
+            성장을 통해 즐거움을 추구하는 5년차 개발자입니다.<br />
+            서비스 개발에서 비즈니스 관점을 고려하여 방향성을 제시하고 반영하는
+            것을 중요하게 생각합니다.<br />
+            기술을 통해 문제를 해결하고 팀과 함께 성장하는 것이 개발자로서의
+            가장 큰 동기입니다.
+          </p>
         </div>
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Vue.js.svg"
-            alt="Vue.js"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">Vue.js</h3>
-        </div>
-
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Tailwind CSS.svg"
-            alt="Tailwind"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">
-            <span class="md:hidden">Tailwind</span>
-            <span class="hidden md:inline">Tailwind CSS</span>
-          </h3>
-        </div>
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Vite.js.svg"
-            alt="Vite.js"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">Vite.js</h3>
-        </div>
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Electron.svg"
-            alt="Electron.js"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">Electron.js</h3>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <h3 class="text-2xl font-semibold mb-4">Back-End</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Kotlin.svg"
-            alt="Kotlin"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">
-            <span class="md:hidden">Kotlin</span>
-            <span class="hidden md:inline">Kotlin (Java)</span>
-          </h3>
-        </div>
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Spring.svg"
-            alt="Spring"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">
-            <span class="md:hidden">Spring</span>
-            <span class="hidden md:inline">Spring Boot</span>
-          </h3>
-        </div>
-
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Hibernate.svg"
-            alt="Hibernate"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">Hibernate</h3>
-        </div>
-
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/MySQL.svg"
-            alt="MySQL"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">MySQL</h3>
-        </div>
-
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img src="img/skill/AWS.svg" alt="AWS" class="w-10 h-10 mb-1" />
-          <h3 class="md:text-lg text-sm font-semibold">AWS</h3>
-        </div>
-
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Docker.svg"
-            alt="Docker"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">Docker</h3>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-8">
-      <h3 class="text-2xl font-semibold mb-4">Learning</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Next.js.svg"
-            alt="Next.js"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">Next.js</h3>
-        </div>
-
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Nest.js.svg"
-            alt="Nest"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">Nest.js</h3>
-        </div>
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/FastAPI.svg"
-            alt="FastAPI"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">FastAPI(LLM)</h3>
-        </div>
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Redis.svg"
-            alt="Redis"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">Redis</h3>
-        </div>
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/RabbitMQ.svg"
-            alt="RabbitMQ"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">RabbitMQ</h3>
-        </div>
-        <div
-          class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
-        >
-          <img
-            src="img/skill/Kubernetes.svg"
-            alt="Kubernetes"
-            class="w-10 h-10 mb-1"
-          />
-          <h3 class="md:text-lg text-sm font-semibold">Kubernetes</h3>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="projects" class="mb-16">
-    <h2 class="text-3xl font-bold mb-6">프로젝트</h2>
-    <div class="space-y-6">
-      <article
-        class="bg-white dark:bg-gray-800 rounded-lg p-6 hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100 dark:border-gray-700"
-      >
-        <div
-          class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4"
-        >
-          <div>
-            <p class="text-sm text-blue-600 dark:text-gray-400 mb-1">
-              일반 / 구매대행 사업자들을 위한 B2B 소프트웨어
-            </p>
-            <h3
-              class="text-xl font-semibold text-gray-800 dark:text-gray-100"
-            >
-              원플렉스
+      </section>
+      <!-- About Section -->
+      <section id="career" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">경력</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <article
+            class="bg-white dark:bg-gray-800 rounded-lg p-6 hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100 dark:border-gray-700"
+          >
+            <h3 class="text-xl font-semibold mb-1">
+              (주)콘버스 / 이커머스 솔루션 리더
             </h3>
-            <p
-              class="text-sm text-gray-600 dark:text-gray-400 mt-1 mb-3 lg:mb-0"
+            <h5
+              class="text-base text-gray-600 dark:text-gray-400 font-semibold mb-3"
             >
-              (주)콘버스 / 2023.01 - 2025.03
-            </p>
+              2021.03 ~ 2025.03 (4년)
+            </h5>
+            <ul class="text-gray-800 dark:text-gray-300 leading-relaxed">
+              <li>구매대행 솔루션 '투플렉스'의 다양한 기능을 개발 및 운영</li>
+              <li>오픈마켓 솔루션 '원플렉스' 의 기획 및 구현 , 배포 및 운영</li>
+              <li>전반적인 서비스 기능 개선 및 리팩토링 작업 다수 수행</li>
+            </ul>
+          </article>
+          <article
+            class="bg-white dark:bg-gray-800 rounded-lg p-6 hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100 dark:border-gray-700"
+          >
+            <h3 class="text-xl font-semibold mb-4">교육 및 활동</h3>
+            <ul class="text-gray-800 dark:text-gray-300 leading-relaxed">
+              <li>2023 경희사이버대학교 컴퓨터정보통신공학 졸업 (학사)</li>
+              <li>2022 학생 창업 유망팀 300 산학협력 EXPO 인기상 수상</li>
+              <li>2022 대학생 창업팀 '더 세이프 컴퍼니' CTO 활동</li>
+              <li>2020 코리아 IT아카데미 자바 풀스택 과정 수료</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section id="skills" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">기술</h2>
+
+        <div class="mb-8">
+          <h3 class="text-2xl font-semibold mb-4">Front-End</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/TypeScript.svg"
+                alt="Vue.js"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">TypeScript</h3>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/React.svg"
+                alt="React"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">React</h3>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Vue.js.svg"
+                alt="Vue.js"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">Vue.js</h3>
+            </div>
+
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Tailwind CSS.svg"
+                alt="Tailwind"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">
+                <span class="md:hidden">Tailwind</span>
+                <span class="hidden md:inline">Tailwind CSS</span>
+              </h3>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Vite.js.svg"
+                alt="Vite.js"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">Vite.js</h3>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Electron.svg"
+                alt="Electron.js"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">Electron.js</h3>
+            </div>
           </div>
-          <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-semibold mb-4">Back-End</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Kotlin.svg"
+                alt="Kotlin"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">
+                <span class="md:hidden">Kotlin</span>
+                <span class="hidden md:inline">Kotlin (Java)</span>
+              </h3>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Spring.svg"
+                alt="Spring"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">
+                <span class="md:hidden">Spring</span>
+                <span class="hidden md:inline">Spring Boot</span>
+              </h3>
+            </div>
+
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Hibernate.svg"
+                alt="Hibernate"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">Hibernate</h3>
+            </div>
+
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/MySQL.svg"
+                alt="MySQL"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">MySQL</h3>
+            </div>
+
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img src="img/skill/AWS.svg" alt="AWS" class="w-10 h-10 mb-1" />
+              <h3 class="md:text-lg text-sm font-semibold">AWS</h3>
+            </div>
+
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Docker.svg"
+                alt="Docker"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">Docker</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <h3 class="text-2xl font-semibold mb-4">Learning</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Next.js.svg"
+                alt="Next.js"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">Next.js</h3>
+            </div>
+
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Nest.js.svg"
+                alt="Nest"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">Nest.js</h3>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/FastAPI.svg"
+                alt="FastAPI"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">FastAPI(LLM)</h3>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Redis.svg"
+                alt="Redis"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">Redis</h3>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/RabbitMQ.svg"
+                alt="RabbitMQ"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">RabbitMQ</h3>
+            </div>
+            <div
+              class="flex flex-col items-center bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 rounded-lg p-4 hover:scale-105 transition-transform duration-300"
+            >
+              <img
+                src="img/skill/Kubernetes.svg"
+                alt="Kubernetes"
+                class="w-10 h-10 mb-1"
+              />
+              <h3 class="md:text-lg text-sm font-semibold">Kubernetes</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projects" class="mb-16">
+        <h2 class="text-3xl font-bold mb-6">프로젝트</h2>
+        <div class="space-y-6">
+          <article
+            class="bg-white dark:bg-gray-800 rounded-lg p-6 hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100 dark:border-gray-700"
+          >
+            <div
+              class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4"
+            >
+              <div>
+                <p class="text-sm text-blue-600 dark:text-gray-400 mb-1">
+                  일반 / 구매대행 사업자들을 위한 B2B 소프트웨어
+                </p>
+                <h3
+                  class="text-xl font-semibold text-gray-800 dark:text-gray-100"
+                >
+                  원플렉스
+                </h3>
+                <p
+                  class="text-sm text-gray-600 dark:text-gray-400 mt-1 mb-3 lg:mb-0"
+                >
+                  (주)콘버스 / 2023.01 - 2025.03
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
                 <span
                   class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
                 >
                   React
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   Spring Boot
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   AWS Aurora
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   Electron.js
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   Zustand
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   Tailwind CSS
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   Ant Design
                 </span>
-          </div>
-        </div>
-        <p class="text-gray-600 dark:text-gray-400 mb-4">
-          5대 오픈마켓의 상품 등록, 주문 관리, 재고 관리 등 오픈마켓 통합
-          운영을 위한 다양한 기능을 제공합니다.
-        </p>
-        <ul class="text-gray-600 dark:text-gray-400 mb-4 space-y-2">
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >React와 Spring Boot(Kotlin)를 활용한 풀스택 개발 및
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              5대 오픈마켓의 상품 등록, 주문 관리, 재고 관리 등 오픈마켓 통합
+              운영을 위한 다양한 기능을 제공합니다.
+            </p>
+            <ul class="text-gray-600 dark:text-gray-400 mb-4 space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >React와 Spring Boot(Kotlin)를 활용한 풀스택 개발 및
                   운영</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >알리익스프레스, 테무의 국내 진출로 인한 구매대행 시장 위축에
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >알리익스프레스, 테무의 국내 진출로 인한 구매대행 시장 위축에
                   대응하기 위한 새로운 프로젝트 기획</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >구매대행 사업자 전용이 아닌 일반 오픈 마켓 셀러를 위한 통합
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >구매대행 사업자 전용이 아닌 일반 오픈 마켓 셀러를 위한 통합
                   관리 솔루션 원플렉스를 개발</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >React, TypeScript, Tailwind CSS, Vite, pnpm등 새로운 기술
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >React, TypeScript, Tailwind CSS, Vite, pnpm등 새로운 기술
                   스택 도입 및 프로젝트 설계</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >ES Lint, Prettier를 통한 코드 품질 개선 및 컨벤션 수립</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >이미지 기반 상품 검색, 스마트스토어 상품을 타 마켓 업로드
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >ES Lint, Prettier를 통한 코드 품질 개선 및 컨벤션 수립</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >이미지 기반 상품 검색, 스마트스토어 상품을 타 마켓 업로드
                   기능 구현</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >AWS (EC2, ELB, S3, CloudFront, Route53 등)를 활용한
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >AWS (EC2, ELB, S3, CloudFront, Route53 등)를 활용한
                   배포</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >서비스 기획부터 설계, 개발, 배포까지 전체 프로덕트 사이클을
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >서비스 기획부터 설계, 개발, 배포까지 전체 프로덕트 사이클을
                   리드</span
-            >
-          </li>
-        </ul>
-        <div class="flex justify-start space-x-2">
-          <a
-            href="https://www.oneflex.info"
-            class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-500 transition-colors"
-          >소개 사이트</a
+                >
+              </li>
+            </ul>
+            <div class="flex justify-start space-x-2">
+              <a
+                href="https://www.oneflex.info"
+                class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-500 transition-colors"
+                >소개 사이트</a
+              >
+            </div>
+          </article>
+          <article
+            class="bg-white dark:bg-gray-800 rounded-lg p-6 hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100 dark:border-gray-700"
           >
-        </div>
-      </article>
-      <article
-        class="bg-white dark:bg-gray-800 rounded-lg p-6 hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100 dark:border-gray-700"
-      >
-        <div
-          class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4"
-        >
-          <div>
-            <p class="text-sm text-blue-600 dark:text-gray-400 mb-1">
-              구매대행 사업자들을 위한 B2B 소프트웨어
-            </p>
-            <h3
-              class="text-xl font-semibold text-gray-800 dark:text-gray-100"
+            <div
+              class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4"
             >
-              투플렉스
-            </h3>
-            <p
-              class="text-sm text-gray-600 dark:text-gray-400 mt-1 mb-3 lg:mb-0"
-            >
-              (주)콘버스 / 2021.03 - 2025.03
-            </p>
-          </div>
-          <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+              <div>
+                <p class="text-sm text-blue-600 dark:text-gray-400 mb-1">
+                  구매대행 사업자들을 위한 B2B 소프트웨어
+                </p>
+                <h3
+                  class="text-xl font-semibold text-gray-800 dark:text-gray-100"
+                >
+                  투플렉스
+                </h3>
+                <p
+                  class="text-sm text-gray-600 dark:text-gray-400 mt-1 mb-3 lg:mb-0"
+                >
+                  (주)콘버스 / 2021.03 - 2025.03
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
                 <span
                   class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
                 >
                   Vue.js
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   Spring Boot
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   AWS Aurora
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   Electron.js
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   Vuex
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   Vuetify
                 </span>
-          </div>
-        </div>
-        <p class="text-gray-600 dark:text-gray-400 mb-4">
-          해외 상품 소싱, 해외 가격 재고 동기화, 국내 마켓 관리 등 구매대행
-          사업을 위한 다양한 기능을 제공합니다.
-        </p>
-        <ul class="text-gray-600 dark:text-gray-400 mb-4 space-y-2">
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >Vue.js와 Spring Boot(Kotlin)를 활용한 풀스택 개발 및
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              해외 상품 소싱, 해외 가격 재고 동기화, 국내 마켓 관리 등 구매대행
+              사업을 위한 다양한 기능을 제공합니다.
+            </p>
+            <ul class="text-gray-600 dark:text-gray-400 mb-4 space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >Vue.js와 Spring Boot(Kotlin)를 활용한 풀스택 개발 및
                   운영</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >서비스 런칭 초기에 합류하여, 상품 수집·등록, 주문 연동,
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >서비스 런칭 초기에 합류하여, 상품 수집·등록, 주문 연동,
                   재고/가격 동기화 등 핵심 기능의 기획 및 개발</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >해외 상품 재고 가격 변동 감지를 위한 Puppeteer기반 크롤링
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >해외 상품 재고 가격 변동 감지를 위한 Puppeteer기반 크롤링
                   리팩토링</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >FE / BE 에서 오픈 마켓 API 연동 및 트러블 슈팅 다수
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >FE / BE 에서 오픈 마켓 API 연동 및 트러블 슈팅 다수
                   경험</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >소프트웨어와 연계하여 사용하는 Chrome 확장프로그램 구현, 지원
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >소프트웨어와 연계하여 사용하는 Chrome 확장프로그램 구현, 지원
                   가능 오픈 마켓 확장 및 기능 구현</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >API 서버 캐싱, 쿼리 최적화, 비동기 처리 등 성능 개선 작업 및
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >API 서버 캐싱, 쿼리 최적화, 비동기 처리 등 성능 개선 작업 및
                   DB 마이그레이션 작업 수행</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >사용자들의 수익 및 사용성을 고려한 기능 개선 및 안정성과
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >사용자들의 수익 및 사용성을 고려한 기능 개선 및 안정성과
                   확장성을 위한 리팩토링 작업 수행</span
-            >
-          </li>
-        </ul>
-        <div class="flex justify-start space-x-2">
-          <a
-            href="https://www.twoflex.net"
-            class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-500 transition-colors"
-          >소개 사이트</a
+                >
+              </li>
+            </ul>
+            <div class="flex justify-start space-x-2">
+              <a
+                href="https://www.twoflex.net"
+                class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-500 transition-colors"
+                >소개 사이트</a
+              >
+            </div>
+          </article>
+          <article
+            class="bg-white dark:bg-gray-800 rounded-lg p-6 hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100 dark:border-gray-700"
           >
-        </div>
-      </article>
-      <article
-        class="bg-white dark:bg-gray-800 rounded-lg p-6 hover:scale-105 transition-transform duration-300 shadow-sm border border-gray-100 dark:border-gray-700"
-      >
-        <div
-          class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4"
-        >
-          <div>
-            <p class="text-sm text-blue-600 dark:text-gray-400 mb-1">
-              테이블 QR 코드 기반 주문 시스템
-            </p>
-            <h3
-              class="text-xl font-semibold text-gray-800 dark:text-gray-100"
+            <div
+              class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4"
             >
-              TableJ
-            </h3>
-            <p
-              class="text-sm text-gray-600 dark:text-gray-400 mt-1 mb-3 lg:mb-0"
-            >
-              개인 토이 프로젝트 / 2025.04 - 진행중
-            </p>
-          </div>
-          <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+              <div>
+                <p class="text-sm text-blue-600 dark:text-gray-400 mb-1">
+                  테이블 QR 코드 기반 주문 시스템
+                </p>
+                <h3
+                  class="text-xl font-semibold text-gray-800 dark:text-gray-100"
+                >
+                  TableJ
+                </h3>
+                <p
+                  class="text-sm text-gray-600 dark:text-gray-400 mt-1 mb-3 lg:mb-0"
+                >
+                  개인 토이 프로젝트 / 2025.04 - 진행중
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
                 <span
                   class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
                 >
                   Next.js
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   Spring Boot
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   AWS Aurora
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   shadcn/ui
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   LLM
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   Redis
                 </span>
-            <span
-              class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
-            >
+                <span
+                  class="bg-gray-50 dark:bg-gray-700 text-xs px-2 py-0.5 rounded-md text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-600"
+                >
                   RabbitMQ
                 </span>
-          </div>
-        </div>
-        <p class="text-gray-600 dark:text-gray-400 mb-4">
-          QR 코드를 기반으로 상점 주문 페이지에 들어가서 주문하고 키친
-          디스플레이에서 확인할 수 있는 시스템을 구현하는
-          토이프로젝트입니다.
-        </p>
-        <ul class="text-gray-600 dark:text-gray-400 mb-4 space-y-2">
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >재직중일 때 서비스 특성상 사용해보지 못했던 기술 스택의
+              </div>
+            </div>
+            <p class="text-gray-600 dark:text-gray-400 mb-4">
+              QR 코드를 기반으로 상점 주문 페이지에 들어가서 주문하고 키친
+              디스플레이에서 확인할 수 있는 시스템을 구현하는
+              토이프로젝트입니다.
+            </p>
+            <ul class="text-gray-600 dark:text-gray-400 mb-4 space-y-2">
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >재직중일 때 서비스 특성상 사용해보지 못했던 기술 스택의
                   중점을 두고 토이프로젝트를 진행해보고 있습니다.</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span>설계 단계는 끝났고 현재 Next.js를 학습중입니다.</span>
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >FE는 Monorepo 형태로 Client / Worker / Admin 도메인 페이지
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span>설계 단계는 끝났고 현재 Next.js를 학습중입니다.</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >FE는 Monorepo 형태로 Client / Worker / Admin 도메인 페이지
                   구성</span
-            >
-          </li>
-          <li class="flex items-start">
-            <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
-            <span
-            >BE는 Redis와 RabbitMQ를 활용한 비동기 처리 및 캐싱 작업을
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-minus text-blue-500 mt-2 mr-2 text-[8px]"></i>
+                <span
+                  >BE는 Redis와 RabbitMQ를 활용한 비동기 처리 및 캐싱 작업을
                   진행할 예정입니다.</span
-            >
-          </li>
-        </ul>
-        <div class="flex justify-start space-x-2">
-          <a
-            href="#"
-            class="text-sm bg-gray-600 text-white px-3 py-1 rounded-md hover:bg-blue-500 transition-colors"
-          >Github (준비중)</a
-          >
-          <a
-            href="#"
-            class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-500 transition-colors"
-          >라이브 데모 (준비중)</a
-          >
+                >
+              </li>
+            </ul>
+            <div class="flex justify-start space-x-2">
+              <a
+                href="#"
+                class="text-sm bg-gray-600 text-white px-3 py-1 rounded-md hover:bg-blue-500 transition-colors"
+                >Github (준비중)</a
+              >
+              <a
+                href="#"
+                class="text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-500 transition-colors"
+                >라이브 데모 (준비중)</a
+              >
+            </div>
+          </article>
         </div>
-      </article>
-    </div>
-  </section>
-  <section id="links">
-    <h2 class="text-3xl font-bold mb-6">링크</h2>
-    <div class="flex flex-col items-start space-y-6">
-      <div class="flex flex-col items-start space-y-4">
-        <a
-          href="https://github.com/jm9293"
-          target="_blank"
-          class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
-        >
-          <i class="fa-brands fa-github text-2xl"></i>
-          <span class="text-lg">GitHub</span>
-        </a>
-        <a
-          href="mailto:jm97010412@gmail.com"
-          target="_blank"
-          class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
-        >
-          <i class="fa-regular fa-envelope text-2xl"></i>
-          <span class="text-lg">jm97010412@gmail.com</span>
-        </a>
-        <a
-          href="https://volcano-salt-969.notion.site/17b57dab6a7a805cbf2cd010f10ac604"
-          target="_blank"
-          class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
-        >
-          <i class="fa-regular fa-file text-2xl"></i>
-          <span class="text-lg">개인 Notion</span>
-        </a>
-      </div>
-      <p class="text-gray-600 dark:text-gray-400 text-left">
-        새로운 기회나 커피챗은 언제나 환영입니다!
-      </p>
-    </div>
-  </section>
-</main>
-<footer class="py-6"></footer>
-</body>
-<script>
-  function initialTheme() {
-    const darkModeToggleIcon = document
-      .getElementById('darkModeToggle')
-      .querySelector('i');
-    if (!localStorage.theme || localStorage.theme === 'dark') {
-      document.documentElement.classList.add('dark');
-      localStorage.theme = 'dark';
-      darkModeToggleIcon.className = 'fas fa-sun text-yellow-400';
-    } else {
-      document.documentElement.classList.remove('dark');
-      darkModeToggleIcon.className = 'fas fa-moon text-gray-700';
+      </section>
+      <section id="links">
+        <h2 class="text-3xl font-bold mb-6">링크</h2>
+        <div class="flex flex-col items-start space-y-6">
+          <div class="flex flex-col items-start space-y-4">
+            <a
+              href="https://github.com/jm9293"
+              target="_blank"
+              class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-brands fa-github text-2xl"></i>
+              <span class="text-lg">GitHub</span>
+            </a>
+            <a
+              href="mailto:jm97010412@gmail.com"
+              target="_blank"
+              class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-regular fa-envelope text-2xl"></i>
+              <span class="text-lg">jm97010412@gmail.com</span>
+            </a>
+            <a
+              href="https://volcano-salt-969.notion.site/17b57dab6a7a805cbf2cd010f10ac604"
+              target="_blank"
+              class="flex items-center space-x-2 text-gray-600 dark:text-gray-300 hover:text-blue-500 transition-colors"
+            >
+              <i class="fa-regular fa-file text-2xl"></i>
+              <span class="text-lg">개인 Notion</span>
+            </a>
+          </div>
+          <p class="text-gray-600 dark:text-gray-400 text-left">
+            새로운 기회나 커피챗은 언제나 환영입니다!
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer class="py-6"></footer>
+  </body>
+  <script>
+    function initialTheme() {
+      const darkModeToggleIcon = document
+        .getElementById("darkModeToggle")
+        .querySelector("i");
+      if (!localStorage.theme || localStorage.theme === "dark") {
+        document.documentElement.classList.add("dark");
+        localStorage.theme = "dark";
+        darkModeToggleIcon.className = "fas fa-sun text-yellow-400";
+      } else {
+        document.documentElement.classList.remove("dark");
+        darkModeToggleIcon.className = "fas fa-moon text-gray-700";
+      }
     }
-  }
 
-  function toggleDarkMode() {
-    const darkModeToggleIcon = document
-      .getElementById('darkModeToggle')
-      .querySelector('i');
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      localStorage.theme = 'light';
-      darkModeToggleIcon.className = 'fas fa-moon text-gray-700';
-    } else {
-      document.documentElement.classList.add('dark');
-      localStorage.theme = 'dark';
-      darkModeToggleIcon.className = 'fas fa-sun text-yellow-400';
+    function toggleDarkMode() {
+      const darkModeToggleIcon = document
+        .getElementById("darkModeToggle")
+        .querySelector("i");
+      if (document.documentElement.classList.contains("dark")) {
+        document.documentElement.classList.remove("dark");
+        localStorage.theme = "light";
+        darkModeToggleIcon.className = "fas fa-moon text-gray-700";
+      } else {
+        document.documentElement.classList.add("dark");
+        localStorage.theme = "dark";
+        darkModeToggleIcon.className = "fas fa-sun text-yellow-400";
+      }
     }
-  }
 
-  document
-    .getElementById('darkModeToggle')
-    .addEventListener('click', toggleDarkMode);
+    document
+      .getElementById("darkModeToggle")
+      .addEventListener("click", toggleDarkMode);
 
-  document
-    .getElementById('darkModeToggleMobile')
-    .addEventListener('click', toggleDarkMode);
+    document
+      .getElementById("darkModeToggleMobile")
+      .addEventListener("click", toggleDarkMode);
 
-  const mobileMenu = document.getElementById('mobileMenu');
-  // 모바일 메뉴 열기
-  document.getElementById('menuToggle').addEventListener('click', () => {
-    mobileMenu.classList.toggle('translate-x-full');
-  });
-  document.getElementById('closeMenu').addEventListener('click', () => {
-    mobileMenu.classList.add('translate-x-full');
-  });
+    const mobileMenu = document.getElementById("mobileMenu");
+    // 모바일 메뉴 열기
+    document.getElementById("menuToggle").addEventListener("click", () => {
+      mobileMenu.classList.toggle("translate-x-full");
+    });
+    document.getElementById("closeMenu").addEventListener("click", () => {
+      mobileMenu.classList.add("translate-x-full");
+    });
 
-  initialTheme();
-</script>
+    initialTheme();
+  </script>
 </html>
